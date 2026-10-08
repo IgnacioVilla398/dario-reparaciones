@@ -1,0 +1,23 @@
+ORIGEN DE LAS FOTOS DE LA WEB
+=============================
+
+Estas fotos son de Unsplash. El mapeo original -> seccion es:
+
+  img/hero-bg.jpg      <- clint-patterson-yGPxCYPS8H4-unsplash.jpg
+      Autor: Clint Patterson · https://unsplash.com/photos/yGPxCYPS8H4
+  img/hardware.jpg     <- samsung-memory-fxKvHGDICcQ-unsplash.jpg
+      Autor: Samsung Memory · https://unsplash.com/photos/fxKvHGDICcQ
+  img/software.jpg     <- nathan-anderson-KHSPGJ3zP0M-unsplash.jpg
+      Autor: Nathan Anderson · https://unsplash.com/photos/KHSPGJ3zP0M
+  img/redes.jpg        <- revendo-7x0dGJqbfgk-unsplash.jpg
+      Autor: Revendo · https://unsplash.com/photos/7x0dGJqbfgk
+  img/parallax-sobre-mi.jpg <- christin-hume-Hcfwew744z4-unsplash.jpg
+      Autor: Christin Hume · https://unsplash.com/photos/Hcfwew744z4
+  img/parallax-faq.jpg <- claudimir-pachioni-sHrDI7CO9H4-unsplash.jpg
+      Autor: Claudimir Pachioni · https://unsplash.com/photos/sHrDI7CO9H4
+
+SIN USAR:
+  valentin-lacoste-fJTyegEd-6k-unsplash.jpg
+
+Para reemplazar una foto: pisa el archivo de img/ con la tuya
+manteniendo el mismo nombre, o edita _usar_mis_fotos.py y reejecutalo.

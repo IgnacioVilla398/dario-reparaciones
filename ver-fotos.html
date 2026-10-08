@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnóstico de imágenes — Darius Reparaciones</title>
+<style>
+  body { margin:0; padding:28px; background:#0a0f1d; color:#e8eefc;
+         font-family:'Segoe UI',system-ui,sans-serif; }
+  h1 { font-size:1.4rem; margin:0 0 6px; }
+  p.lead { color:#9fb0d0; margin:0 0 22px; }
+  .resumen { padding:16px 20px; border-radius:12px; margin-bottom:26px;
+             border:1px solid #2a3a5c; background:#131c33; font-size:1.05rem; }
+  .resumen.ok  { border-color:#84cc16; box-shadow:0 0 20px rgba(132,204,22,.25); }
+  .resumen.bad { border-color:#f87171; box-shadow:0 0 20px rgba(248,113,113,.25); }
+  h2 { font-size:.85rem; letter-spacing:2px; text-transform:uppercase;
+       color:#22d3ee; margin:34px 0 14px; border-bottom:1px dashed #2a3a5c; padding-bottom:8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
+  .foto { border:1px solid #2a3a5c; border-radius:12px; overflow:hidden; background:#0f172a; }
+  .foto img { width:100%; height:170px; object-fit:cover; display:block; background:#060a14; }
+  .foto .info { padding:12px 14px; font-size:.82rem; line-height:1.5; }
+  .foto code { color:#a3e635; font-size:.8rem; word-break:break-all; }
+  .foto .meta { color:#6b7ea3; }
+  .estado { display:inline-block; padding:2px 9px; border-radius:20px; font-size:.72rem;
+            font-weight:700; letter-spacing:.5px; }
+  .estado.ok  { background:rgba(132,204,22,.18); color:#a3e635; }
+  .estado.bad { background:rgba(248,113,113,.18); color:#fca5a5; }
+  .estado.wait{ background:rgba(34,211,238,.15); color:#7dd3fc; }
+  .rota { object-fit:contain !important; padding:22px; }
+</style>
+</head>
+<body>
+
+<h1>Diagnóstico de imágenes</h1>
+<p class="lead">Esta página muestra tal cual los archivos que están en la carpeta <code>img/</code>.
+Si acá se ven las fotos, entonces los archivos están bien y el problema está en cómo se abre <code>index.html</code>.</p>
+
+<div class="resumen" id="resumen">Comprobando archivos…</div>
+
+<h2>Imágenes que usa la web</h2>
+<div class="grid" id="usadas"></div>
+
+<h2>Tus fotos originales (sin usar o fuente)</h2>
+<div class="grid" id="originales"></div>
+
+<script>
+  const USADAS = [
+    ['hero-bg.jpg',  'Fondo del inicio (navbar/hero)'],
+    ['hardware.jpg', 'Tarjeta Hardware'],
+    ['software.jpg', 'Tarjeta Software'],
+    ['redes.jpg',    'Tarjeta Redes'],
+    ['dario.jpg',    'Sección Sobre mí'],
+    ['parallax-sobre-mi.jpg', 'Fondo Parallax de Sobre mí'],
+    ['parallax-faq.jpg',      'Fondo Parallax de Preguntas frecuentes'],
+    ['logo.png',     'Logo del navbar'],
+    ['favicon.png',  'Icono de la pestaña'],
+    ['og-image.jpg', 'Imagen al compartir el link'],
+  ];
+
+  const ORIGINALES = [
+    'christin-hume-Hcfwew744z4-unsplash.jpg',
+    'claudimir-pachioni-sHrDI7CO9H4-unsplash.jpg',
+    'clint-patterson-yGPxCYPS8H4-unsplash.jpg',
+    'nathan-anderson-KHSPGJ3zP0M-unsplash.jpg',
+    'revendo-7x0dGJqbfgk-unsplash.jpg',
+    'samsung-memory-fxKvHGDICcQ-unsplash.jpg',
+    'valentin-lacoste-fJTyegEd-6k-unsplash.jpg',
+  ];
+
+  let total = 0, ok = 0;
+
+  function tarjeta(contenedor, archivo, nota) {
+    total++;
+    const div = document.createElement('div');
+    div.className = 'foto';
+    div.innerHTML =
+      '<img src="img/' + archivo + '" alt="' + archivo + '" />' +
+      '<div class="info">' +
+        '<div><span class="estado wait">Comprobando…</span></div>' +
+        '<div><code>img/' + archivo + '</code></div>' +
+        (nota ? '<div class="meta">' + nota + '</div>' : '') +
+        '<div class="meta med"></div>' +
+      '</div>';
+    contenedor.appendChild(div);
+
+    const img = div.querySelector('img');
+    const estado = div.querySelector('.estado');
+    const med = div.querySelector('.med');
+
+    img.addEventListener('load', () => {
+      ok++;
+      estado.className = 'estado ok';
+      estado.textContent = 'CARGA OK';
+      med.textContent = img.naturalWidth + ' × ' + img.naturalHeight + ' px';
+      actualizar();
+    });
+    img.addEventListener('error', () => {
+      estado.className = 'estado bad';
+      estado.textContent = 'NO CARGA';
+      img.classList.add('rota');
+      med.textContent = 'El navegador no pudo leer este archivo';
+      actualizar();
+    });
+  }
+
+  function actualizar() {
+    const r = document.getElementById('resumen');
+    const pendientes = total - ok - document.querySelectorAll('.estado.bad').length;
+    if (pendientes > 0) return;
+    if (ok === total) {
+      r.className = 'resumen ok';
+      r.innerHTML = '<strong>✅ Las ' + total + ' imágenes cargan bien.</strong> ' +
+        'Los archivos están correctos. Si en <code>index.html</code> no se ven, el problema es el visor: ' +
+        'abrí el archivo con doble clic en Chrome, Edge o Firefox (no en una ventana de vista previa).';
+    } else {
+      r.className = 'resumen bad';
+      r.innerHTML = '<strong>⚠️ ' + ok + ' de ' + total + ' imágenes cargan.</strong> ' +
+        'Las marcadas en rojo no están en la carpeta <code>img/</code> o tienen otro nombre.';
+    }
+  }
+
+  USADAS.forEach(([f, n]) => tarjeta(document.getElementById('usadas'), f, n));
+  ORIGINALES.forEach((f) => tarjeta(document.getElementById('originales'), f, ''));
+</script>
+</body>
+</html>

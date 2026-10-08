@@ -1,0 +1,137 @@
+========================================================================
+ DARIUS REPARACIONES — Landing page
+ Reparación de PC y notebooks · Mar del Plata
+========================================================================
+
+ARCHIVOS
+  index.html                  Página completa (todas las secciones)
+  css/styles.css              Estilos (CSS puro, sin frameworks ni build)
+  js/main.js                  JavaScript nativo (menú, parallax, FAQ, formulario)
+  img/                        Todas las imágenes de la web
+  ver-fotos.html              Autochequeo: muestra las imágenes y si cargan
+  img/LEEME-imagenes.txt      Qué imagen va en cada lugar y medidas sugeridas
+  _usar_mis_fotos.py          Recorta y comprime fotos para la web (opcional)
+  _generar_placeholders.py    Regenera las imágenes de ejemplo (opcional)
+
+CÓMO VER LA PÁGINA
+  Hacé doble clic en index.html (se abre en el navegador). No necesita
+  servidor ni instalación. Para publicarla, subí toda la carpeta a
+  cualquier hosting (Netlify, Vercel, Hostinger, cPanel, GitHub Pages).
+
+------------------------------------------------------------------------
+ 1) TUS DATOS — lo que tenés que revisar antes de publicar
+------------------------------------------------------------------------
+  a) WHATSAPP: ya está puesto tu número real, 223 573-8816.
+     Está centralizado en js/main.js, bloque CONFIG:
+
+         const CONFIG = { whatsapp: '5492235738816', ... };
+
+     Ese único valor actualiza TODOS los botones de WhatsApp del sitio.
+     Si algún día cambiás de número, editás solo esa línea.
+
+  b) DIRECCIÓN DEL TALLER (inventada, hay que cambiarla):
+     Buscá en index.html el comentario <!-- TODO: reemplazar por tu
+     dirección real --> y cambiá las 2 apariciones de
+     "Av. Colón 1234, Mar del Plata":
+        - el texto de la sección Ubicación
+        - el texto del footer
+
+  c) MAPA DE GOOGLE: en la sección Ubicación hay un <iframe>. Reemplazá la
+     dirección dentro de src= por la tuya. Lo más fácil:
+       1. Abrí Google Maps y buscá tu dirección.
+       2. Compartir -> Insertar un mapa -> Copiar HTML.
+       3. Pegá tu <iframe> en reemplazo del que está.
+
+  d) REDES SOCIALES: en el footer, cambiá los enlaces de Instagram y
+     Facebook por los de tus perfiles reales.
+
+  e) LOGO: img/logo.png y img/favicon.png son provisorios (las siglas DR).
+     Reemplazalos por tu logo. Mismo nombre, mismo tamaño.
+
+  f) RESEÑAS DE GOOGLE: las 4 opiniones son de ejemplo. Reemplazá los
+     textos, los nombres y el enlace "Ver en Google" por el de tu perfil
+     de Google Empresas. También ajustá "4,9 de 5 · 128 opiniones".
+
+  g) EMAIL: contacto@dariusreparaciones.com es provisorio.
+
+------------------------------------------------------------------------
+ 2) LAS IMÁGENES DEL SITIO
+------------------------------------------------------------------------
+      img/hero-bg.jpg            fondo del inicio       (1920x1080)
+      img/hardware.jpg           tarjeta Hardware       (1000x700)
+      img/software.jpg           tarjeta Software       (1000x700)
+      img/redes.jpg              tarjeta Redes          (1000x700)
+      img/dario.jpg              foto de Dario          (900x1125)  PLACEHOLDER
+      img/parallax-sobre-mi.jpg  fondo Parallax Sobre mí (1920x1080)
+      img/parallax-faq.jpg       fondo Parallax FAQ      (1920x1080)
+      img/logo.png               logo del navbar        (320x320)   PLACEHOLDER
+      img/favicon.png            icono de la pestaña    (128x128)   PLACEHOLDER
+      img/og-image.jpg           al compartir el link   (1200x630)
+
+  Las 6 primeras ya salen de tus fotos de Unsplash (ver img/CREDITOS-fotos.txt).
+  Falta reemplazar: dario.jpg (tu retrato), logo.png y favicon.png.
+
+  Para cambiar una foto hay dos caminos:
+    a) Pisá el archivo de img/ con tu foto, conservando el mismo nombre.
+    b) Editá el diccionario MAPEO en _usar_mis_fotos.py y reejecutá el
+       script: recorta, aplica el grado de color y comprime solo.
+
+  Las imágenes de parallax van oscurecidas y con un desenfoque leve a
+  propósito: encima va el texto y tiene que leerse perfecto.
+
+------------------------------------------------------------------------
+ 3) SECCIONES INCLUIDAS
+------------------------------------------------------------------------
+  Navbar fijo con menú móvil · Hero con fondo y contadores animados ·
+  Servicios (Hardware / Software / Redes) · Proceso de trabajo ·
+  Sobre mí CON PARALLAX · Preguntas frecuentes CON PARALLAX (acordeón) ·
+  Reseñas conectadas a Google Empresas (4,9 ★ + 4 opiniones) ·
+  Contacto con formulario que abre WhatsApp · Ubicación con mapa de
+  Google · Footer con redes sociales · Botón flotante de WhatsApp que
+  aparece al scrollear · Botón volver arriba.
+
+  EL EFECTO PARALLAX
+  Las secciones "Sobre mí" y "Preguntas frecuentes" tienen una capa de
+  fondo que se mueve más lento que el scroll. Se controla en js/main.js
+  (función initParallax) y el atributo data-parallax del HTML:
+      data-parallax="0.18"  -> más movimiento
+      data-parallax="0.14"  -> más sutil
+  Si el JavaScript no está activo, el parallax se hace igual con
+  background-attachment: fixed (CSS puro). Y si el visitante tiene activado
+  "reducir movimiento" en su sistema, el fondo queda quieto.
+
+------------------------------------------------------------------------
+ 4) SI NO VES LAS IMÁGENES (o la página se ve vacía)
+------------------------------------------------------------------------
+  a) RECARGÁ SIN CACHÉ: Ctrl + Shift + R (o Ctrl + F5).
+
+  b) Chequeo rápido: abrí ver-fotos.html (doble clic). Muestra las
+     imágenes con un cartel verde "CARGA OK" o rojo "NO CARGA".
+
+  c) La página está protegida contra fallas de JavaScript: el contenido
+     solo se oculta para animarlo si el JS está activo, y si main.js no
+     carga, a los 2,5 segundos se muestra todo igual.
+
+  d) Abrí el archivo con doble clic en Chrome, Edge o Firefox. Los paneles
+     de "vista previa" de chats y editores no siempre resuelven las rutas
+     relativas img/ y muestran la página sin fotos.
+
+  e) El mapa de Google necesita internet. Si no hay conexión, el resto de
+     la página funciona igual.
+
+------------------------------------------------------------------------
+ 5) DETALLES TÉCNICOS
+------------------------------------------------------------------------
+  - Sin dependencias ni build: HTML5 + CSS3 puro + JavaScript nativo (ES6).
+  - Responsive real: escritorio, tablet y celular.
+  - Accesibilidad: navegación por teclado, aria-labels, foco visible,
+    enlace "saltar al contenido", contraste cuidado y soporte completo de
+    prefers-reduced-motion (incluido el parallax).
+  - SEO: title, description, Open Graph, HTML semántico, jerarquía de
+    encabezados y textos alternativos en las imágenes.
+  - Rendimiento: imágenes comprimidas (~700 KB en total), carga diferida
+    (loading="lazy") y parallax con throttle de ~50 fps.
+  - Microinteracciones: glow neón en hover, brillo que sigue al cursor en
+    las tarjetas, botones con efecto de barrido, aparición al scrollear.
+  - Las tipografías (Orbitron y Rajdhani) se cargan desde Google Fonts;
+    sin internet, el navegador usa sus fuentes del sistema.

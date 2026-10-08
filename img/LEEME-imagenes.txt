@@ -1,0 +1,30 @@
+IMÁGENES QUE USA LA PÁGINA — DARIUS REPARACIONES
+================================================
+
+Reemplazá cada archivo por tu foto real MANTENIENDO EL MISMO NOMBRE.
+Si el nombre cambia, la imagen no se verá en la web.
+
+  img/hero-bg.jpg ............ Fondo del inicio (1920x1080, oscura)
+  img/hardware.jpg ........... Tarjeta Hardware (1000x700)
+  img/software.jpg ........... Tarjeta Software (1000x700)
+  img/redes.jpg .............. Tarjeta Redes (1000x700)
+  img/dario.jpg .............. Foto de Dario Barbas (900x1125, vertical)  [PLACEHOLDER]
+  img/parallax-sobre-mi.jpg .. Fondo Parallax sección Sobre mí (1920x1080)
+  img/parallax-faq.jpg ....... Fondo Parallax sección FAQ (1920x1080)
+  img/logo.png ............... Logo del navbar (320x320)                  [PLACEHOLDER]
+  img/favicon.png ............ Icono de la pestaña (128x128)              [PLACEHOLDER]
+  img/og-image.jpg ........... Imagen al compartir el link (1200x630)
+
+PENDIENTES DE REEMPLAZAR
+  dario.jpg, logo.png y favicon.png son provisorios. El resto ya está
+  hecho con fotos de Unsplash (ver CREDITOS-fotos.txt).
+
+CÓMO SE GENERARON
+  Los que dicen [PLACEHOLDER] los generó _generar_placeholders.py.
+  Los demás los generó _usar_mis_fotos.py a partir de tus fotos.
+
+CONSEJOS
+  - Comprimí las fotos (TinyPNG / Squoosh) para que la página cargue rápido.
+  - Las fotos del parallax conviene que sean oscuras y sin detalles
+    importantes en el centro: el texto va encima y la capa se mueve.
+  - Si borrás una imagen, la sección se ve igual: solo queda sin foto.
