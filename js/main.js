@@ -1,57 +1,36 @@
 /* ==========================================================================
-   DARIUS REPARACIONES — JavaScript nativo (sin dependencias)
-   Módulos: configuración, WhatsApp, header, menú, scroll-spy, reveal,
-            contadores, FAQ, slider de reseñas, formulario, volver arriba
+   START PC — JavaScript nativo (sin dependencias)
+   Módulos: configuración, header, menú, scroll-spy, reveal, contadores,
+            FAQ, parallax, formulario por email, volver arriba
    ========================================================================== */
 (function () {
   'use strict';
 
   /* ------------------------------------------------------------------
-     1. CONFIGURACIÓN — cambiá acá tus datos de contacto reales
+     1. CONFIGURACIÓN — datos de contacto del sitio
      ------------------------------------------------------------------ */
   const CONFIG = {
-    // Número de WhatsApp en formato internacional, SIN + ni espacios.
-    // Ej: Argentina (11) 2345-6789  ->  '5491123456789'
-    whatsapp: '5492235738816',
-    appName: 'Darius Reparaciones',
-    // Mensaje por defecto cuando un enlace no trae data-wa-text
-    defaultMessage: 'Hola Dario! Vengo desde la página web de Darius Reparaciones y quiero hacer una consulta.'
+    // Casilla donde llegan los pedidos de presupuesto del formulario
+    email: 'contacto@dariusreparaciones.com',
+    appName: 'Start Pc',
+    asunto: 'Presupuesto desde la web - Start Pc'
   };
 
   const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   /* ------------------------------------------------------------------
-     2. ENLACES DE WHATSAPP (número y mensaje centralizados)
-     ------------------------------------------------------------------ */
-  function buildWaLink(text) {
-    const msg = encodeURIComponent(text || CONFIG.defaultMessage);
-    return `https://wa.me/${CONFIG.whatsapp}?text=${msg}`;
-  }
-
-  function initWhatsAppLinks() {
-    $$('[data-wa]').forEach((el) => {
-      el.setAttribute('href', buildWaLink(el.dataset.waText));
-      el.setAttribute('target', '_blank');
-      el.setAttribute('rel', 'noopener');
-    });
-  }
-
-  /* ------------------------------------------------------------------
-     3. HEADER: fondo al scrollear + botón "volver arriba"
+     2. HEADER: fondo al scrollear + botón "volver arriba"
      ------------------------------------------------------------------ */
   function initHeader() {
     const header = $('#header');
     const toTop  = $('#toTop');
-    const waFloat = $('.wa-float');
     if (!header) return;
 
     const onScroll = () => {
       const y = window.scrollY;
       header.classList.toggle('is-scrolled', y > 40);
       if (toTop) toTop.classList.toggle('is-visible', y > 700);
-      // El botón flotante de WhatsApp aparece con un "pop" al pasar el hero
-      if (waFloat) waFloat.classList.toggle('is-visible', y > 320);
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -66,7 +45,7 @@
   }
 
   /* ------------------------------------------------------------------
-     4. MENÚ MÓVIL
+     3. MENÚ MÓVIL
      ------------------------------------------------------------------ */
   function initMenu() {
     const burger = $('#burger');
@@ -90,14 +69,11 @@
     };
 
     burger.addEventListener('click', () => {
-      const isOpen = list.classList.contains('is-open');
-      isOpen ? close() : open();
+      list.classList.contains('is-open') ? close() : open();
     });
 
     // Cerrar al elegir una sección
-    $$('.nav__link, .nav__cta-mobile .btn', list).forEach((link) => {
-      link.addEventListener('click', close);
-    });
+    $$('.nav__link', list).forEach((link) => link.addEventListener('click', close));
 
     // Cerrar con Escape o al agrandar la ventana
     document.addEventListener('keydown', (e) => {
@@ -112,7 +88,7 @@
   }
 
   /* ------------------------------------------------------------------
-     5. SCROLL-SPY: resalta el enlace de la sección visible
+     4. SCROLL-SPY: resalta el enlace de la sección visible
      ------------------------------------------------------------------ */
   function initScrollSpy() {
     const links = $$('.nav__link');
@@ -127,16 +103,16 @@
     });
     if (!map.size) return;
 
-    const visible = new Map();
+    const ratios = new Map();
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        visible.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0);
+        ratios.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0);
       });
 
       let best = null;
       let bestRatio = 0;
-      visible.forEach((ratio, section) => {
+      ratios.forEach((ratio, section) => {
         if (ratio > bestRatio) { bestRatio = ratio; best = section; }
       });
 
@@ -154,7 +130,7 @@
   }
 
   /* ------------------------------------------------------------------
-     6. ANIMACIONES DE APARICIÓN (reveal)
+     5. ANIMACIONES DE APARICIÓN (reveal)
      ------------------------------------------------------------------ */
   function initReveal() {
     const items = $$('.reveal');
@@ -181,7 +157,7 @@
   }
 
   /* ------------------------------------------------------------------
-     7. CONTADORES ANIMADOS DEL HERO
+     6. CONTADORES ANIMADOS DEL HERO
      ------------------------------------------------------------------ */
   function initCounters() {
     const counters = $$('[data-count]');
@@ -225,7 +201,7 @@
   }
 
   /* ------------------------------------------------------------------
-     8. ACORDEÓN DE PREGUNTAS FRECUENTES
+     7. ACORDEÓN DE PREGUNTAS FRECUENTES
      ------------------------------------------------------------------ */
   function initFaq() {
     const items = $$('.faq__item');
@@ -264,7 +240,7 @@
         }
       });
 
-      // Recalcular altura si cambia el tamaño (texto que se reacomoda)
+      // Recalcular la altura si el texto se reacomoda
       window.addEventListener('resize', () => {
         if (item.classList.contains('is-open')) {
           panel.style.maxHeight = `${panel.scrollHeight}px`;
@@ -274,7 +250,7 @@
   }
 
   /* ------------------------------------------------------------------
-     9. PARALLAX DE FONDOS (secciones Sobre mí y Preguntas frecuentes)
+     8. PARALLAX DE FONDOS (secciones Nosotros y Preguntas frecuentes)
      ------------------------------------------------------------------ */
   function initParallax() {
     const layers = $$('[data-parallax]');
@@ -322,13 +298,13 @@
   }
 
   /* ------------------------------------------------------------------
-     10. FORMULARIO DE CONTACTO -> WhatsApp
+     9. FORMULARIO DE CONTACTO -> email
      ------------------------------------------------------------------ */
   function initForm() {
     const form = $('#contactForm');
     if (!form) return;
 
-    const fields = ['nombre', 'equipo', 'servicio', 'mensaje'];
+    const campos = ['nombre', 'equipo', 'servicio', 'mensaje'];
 
     const setError = (name, message) => {
       const input = form.elements[name];
@@ -341,7 +317,7 @@
     const validate = () => {
       let ok = true;
 
-      fields.forEach((name) => {
+      campos.forEach((name) => {
         const input = form.elements[name];
         if (!input) return;
         const value = String(input.value || '').trim();
@@ -357,7 +333,7 @@
           return;
         }
         if (name === 'mensaje' && value.length < 10) {
-          setError(name, 'Contame un poco más (mínimo 10 caracteres).');
+          setError(name, 'Contanos un poco más (mínimo 10 caracteres).');
           ok = false;
           return;
         }
@@ -368,7 +344,7 @@
     };
 
     // Limpiar errores al escribir
-    fields.forEach((name) => {
+    campos.forEach((name) => {
       const input = form.elements[name];
       if (!input) return;
       input.addEventListener('input', () => setError(name, ''));
@@ -379,8 +355,8 @@
       e.preventDefault();
 
       if (!validate()) {
-        const firstError = $('.field.has-error input, .field.has-error select, .field.has-error textarea', form);
-        if (firstError) firstError.focus();
+        const primerError = $('.field.has-error input, .field.has-error select, .field.has-error textarea', form);
+        if (primerError) primerError.focus();
         return;
       }
 
@@ -389,20 +365,28 @@
       const servicio = form.elements.servicio.value;
       const mensaje  = form.elements.mensaje.value.trim();
 
-      const texto =
-        `Hola Dario! Soy ${nombre}.%0A` +
-        `Equipo: ${equipo}%0A` +
-        `Servicio: ${servicio}%0A` +
-        `Detalle: ${mensaje}%0A%0A` +
-        `(Enviado desde la web de ${CONFIG.appName})`;
+      const cuerpo = [
+        `Nombre: ${nombre}`,
+        `Equipo: ${equipo}`,
+        `Servicio: ${servicio}`,
+        '',
+        'Detalle:',
+        mensaje,
+        '',
+        `(Enviado desde la web de ${CONFIG.appName})`
+      ].join('\n');
 
-      // Se abre Telegram/WhatsApp con el mensaje ya redactado
-      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${texto}`, '_blank', 'noopener');
+      // Se abre el gestor de correo con el mensaje ya redactado
+      const destino = `mailto:${CONFIG.email}` +
+        `?subject=${encodeURIComponent(CONFIG.asunto)}` +
+        `&body=${encodeURIComponent(cuerpo)}`;
+
+      window.location.href = destino;
 
       const btn = $('button[type="submit"]', form);
       if (btn) {
         const original = btn.innerHTML;
-        btn.innerHTML = '¡Abriendo WhatsApp…!';
+        btn.innerHTML = '¡Abriendo tu correo…!';
         btn.disabled = true;
         window.setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 2600);
       }
@@ -412,7 +396,7 @@
   }
 
   /* ------------------------------------------------------------------
-     11. BRILLO QUE SIGUE AL CURSOR EN LAS TARJETAS
+     10. BRILLO QUE SIGUE AL CURSOR EN LAS TARJETAS
      ------------------------------------------------------------------ */
   function initCardGlow() {
     const cards = $$('.card');
@@ -426,6 +410,61 @@
         card.style.setProperty('--my', `${e.clientY - rect.top}px`);
       });
     });
+  }
+
+  /* ------------------------------------------------------------------
+     11. VIDEO DEL LOGO (sección Nosotros)
+     Se reproduce en bucle mientras el usuario recorre la página y se pausa
+     cuando sale de pantalla (ahorra batería y CPU en celulares).
+
+     NOTA: el autoplay se respeta SIEMPRE, incluso si el sistema operativo
+     pide "reducir movimiento". Si preferís que en ese caso quede como imagen
+     fija (más conservador en accesibilidad), descomentá las 4 líneas
+     marcadas abajo.
+     ------------------------------------------------------------------ */
+  function initLogoVideo() {
+    const video = $('.about__video');
+    if (!video) return;
+
+    /* --- Opción accesible (desactivada a propósito) ---
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      return;
+    }
+    --- fin de la opción accesible --- */
+
+    // Algunos navegadores ignoran el atributo muted del HTML y con eso
+    // bloquean el autoplay: se refuerza por JS.
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const reproducir = () => {
+      const intento = video.play();
+      if (intento && typeof intento.catch === 'function') {
+        intento.catch(() => { /* sin permiso de autoplay: queda el poster */ });
+      }
+    };
+
+    // Play/pause según esté a la vista o no
+    if ('IntersectionObserver' in window) {
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) reproducir();
+          else video.pause();
+        });
+      }, { threshold: 0.25 });
+
+      observador.observe(video);
+
+      // Si la pestaña queda en segundo plano, se pausa
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) video.pause();
+        else if (video.getBoundingClientRect().top < window.innerHeight) reproducir();
+      });
+    } else {
+      reproducir();
+    }
   }
 
   /* ------------------------------------------------------------------
@@ -444,7 +483,6 @@
     // ejecutarse, así el seguro anti-fallo del <head> no muestra todo de golpe.
     document.documentElement.classList.remove('reveal-pending');
 
-    initWhatsAppLinks();
     initHeader();
     initMenu();
     initScrollSpy();
@@ -454,6 +492,7 @@
     initParallax();
     initForm();
     initCardGlow();
+    initLogoVideo();
     initYear();
   }
 

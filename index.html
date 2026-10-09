@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0f1d" />
-  <title>Darius Reparaciones | Reparación de PC y Notebooks</title>
+  <title>Start Pc | Reparación y mantenimiento de PC</title>
 
   <!-- SEGURO ANTI-FALLO: el contenido solo se oculta para animarlo si el JS
        está activo. Si main.js no carga o falla, a los 2,5 segundos se
@@ -18,13 +18,14 @@
       }, 2500);
     })();
   </script>
-  <meta name="description" content="Servicio técnico informático: reparación de hardware, eliminación de virus, optimización y redes. PC de escritorio y notebooks con diagnóstico rápido y garantía." />
-  <meta name="keywords" content="reparación de pc, service notebooks, cambio de pasta térmica, formateo, virus, redes wifi, Dario Barbas" />
-  <meta name="author" content="Dario Barbas" />
+
+  <meta name="description" content="Servicio técnico de reparación y mantenimiento de computadoras de escritorio: limpieza, pasta térmica, ampliación de RAM y SSD, eliminación de virus y optimización. Mar del Plata." />
+  <meta name="keywords" content="reparación de pc, servicio técnico pc, cambio de pasta térmica, formateo, virus, cambio de SSD, armado de pc, Mar del Plata" />
+  <meta name="author" content="Equipo técnico de Start Pc" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Darius Reparaciones | Reparación de PC y Notebooks" />
-  <meta property="og:description" content="Hardware, software y redes. Diagnóstico rápido, repuestos de calidad y garantía real." />
+  <meta property="og:title" content="Start Pc | Reparación y mantenimiento de PC" />
+  <meta property="og:description" content="Equipo técnico de reparación y mantenimiento de computadoras, con más de 8 años en el rubro. Servicio exclusivo para PC de escritorio." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="img/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -52,7 +53,7 @@
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-grid"></div>
     <div class="bg-glow bg-glow--cyan"></div>
-    <div class="bg-glow bg-glow--lime"></div>
+    <div class="bg-glow bg-glow--neon"></div>
     <div class="bg-scanline"></div>
   </div>
 
@@ -61,13 +62,17 @@
   <!-- ================= NAVBAR ================= -->
   <header class="header" id="header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a href="#inicio" class="brand" aria-label="Darius Reparaciones - Inicio">
-        <span class="brand__mark" aria-hidden="true">
-          <img src="img/logo.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand__mark-fallback',textContent:'DR'}))" />
-        </span>
+      <a href="#inicio" class="brand" aria-label="Start Pc - Inicio">
+        <!-- Logo principal: img/logo-dario.png (cuadrado 1600x1600).
+             Si el archivo faltara, muestra el nombre en texto. -->
+        <img class="brand__logo"
+             src="img/logo-dario.png"
+             alt="Start Pc — servicio técnico de PC"
+             width="1600" height="1600"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand__text-fallback',textContent:'START PC'}))" />
         <span class="brand__text">
-          <strong>DARIUS</strong>
-          <small>REPARACIONES</small>
+          <strong>START PC</strong>
+          <small>SERVICIO TÉCNICO</small>
         </span>
       </a>
 
@@ -75,25 +80,12 @@
         <li><a class="nav__link is-active" href="#inicio">Inicio</a></li>
         <li><a class="nav__link" href="#hardware">Hardware</a></li>
         <li><a class="nav__link" href="#software">Software</a></li>
-        <li><a class="nav__link" href="#redes">Redes</a></li>
-        <li><a class="nav__link" href="#sobre-mi">Sobre Mí</a></li>
+        <li><a class="nav__link" href="#nosotros">Nosotros</a></li>
         <li><a class="nav__link" href="#faq">Preguntas Frecuentes</a></li>
-        <li><a class="nav__link" href="#resenas">Reseñas</a></li>
         <li><a class="nav__link" href="#contacto">Contacto</a></li>
-        <li class="nav__cta-mobile">
-          <a class="btn btn--whatsapp btn--block" data-wa data-wa-text="Hola Dario! Quiero consultar por un servicio técnico." href="https://wa.me/5492235738816" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.92-1.15-4.75-4.17-4.9-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.72-.33.19 0 .38 0 .55.01.19.01.43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
-            WhatsApp
-          </a>
-        </li>
       </ul>
 
       <div class="nav__actions">
-        <a class="btn btn--whatsapp btn--sm" data-wa data-wa-text="Hola Dario! Quiero consultar por un servicio técnico." href="https://wa.me/5492235738816" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.92-1.15-4.75-4.17-4.9-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.72-.33.19 0 .38 0 .55.01.19.01.43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
-          <span>WhatsApp</span>
-        </a>
-
         <button class="burger" id="burger" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navList">
           <span></span><span></span><span></span>
         </button>
@@ -112,29 +104,33 @@
 
       <div class="container hero__inner">
         <p class="badge reveal">
-          <span class="badge__dot"></span> Servicio técnico · Domicilio y remoto
+          <span class="badge__dot"></span> Servicio técnico · PC de escritorio
         </p>
 
         <h1 class="hero__title reveal">
-          Reparación y mantenimiento <span class="txt-neon">informático</span> de verdad
+          Reparación y <span class="txt-neon">mantenimiento</span>
         </h1>
 
         <p class="hero__subtitle reveal">
-          Soluciones rápidas para <strong>PC de escritorio</strong> y <strong>notebooks</strong>:
+          Somos un equipo técnico especializado en <strong>PC de escritorio y de torre</strong>:
           diagnóstico honesto, repuestos de calidad y equipos que vuelven a rendir como el primer día.
         </p>
 
+        <!-- Destacado principal -->
+        <p class="hero__metric reveal">
+          <span class="hero__metric-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5.5v6c0 5 3.4 9.3 8 10.5 4.6-1.2 8-5.5 8-10.5v-6L12 2Zm-1 13.4-3.2-3.2 1.4-1.4L11 12.6l4.8-4.8 1.4 1.4L11 15.4Z"/></svg>
+          </span>
+          <strong>+150</strong>
+          <span class="hero__metric-txt">computadoras reparadas</span>
+        </p>
+
         <div class="hero__actions reveal">
-          <a class="btn btn--whatsapp btn--lg" data-wa data-wa-text="Hola Dario! Necesito reparar mi equipo. ¿Me pasás un presupuesto?" href="https://wa.me/5492235738816" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.92-1.15-4.75-4.17-4.9-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.72-.33.19 0 .38 0 .55.01.19.01.43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
-            Escribime por WhatsApp
-          </a>
-          <a class="btn btn--ghost btn--lg" href="#servicios">Ver servicios</a>
+          <a class="btn btn--neon btn--lg" href="#servicios">Ver servicios</a>
         </div>
 
         <ul class="hero__stats reveal" aria-label="Datos del servicio">
           <li><strong data-count="8" data-suffix="+">0</strong><span>Años de experiencia</span></li>
-          <li><strong data-count="700" data-suffix="+">0</strong><span>Equipos reparados</span></li>
           <li><strong data-count="48" data-suffix="h">0</strong><span>Entrega promedio</span></li>
           <li><strong data-count="100" data-suffix="%">0</strong><span>Garantía escrita</span></li>
         </ul>
@@ -146,10 +142,10 @@
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">Servicios</p>
-          <h2 class="section__title">Todo lo que tu equipo necesita, <span class="txt-neon">en un solo lugar</span></h2>
+          <h2 class="section__title">Todo lo que tu PC necesita, <span class="txt-neon">en un solo lugar</span></h2>
           <p class="section__lead">
-            Trabajo sobre las tres causas reales de casi cualquier falla: el <strong>hardware</strong> que se desgasta,
-            el <strong>software</strong> que se ensucia y la <strong>red</strong> que no acompaña.
+            Trabajamos sobre las dos causas reales de casi cualquier falla: el <strong>hardware</strong> que se desgasta
+            y el <strong>software</strong> que se ensucia.
           </p>
         </header>
 
@@ -167,12 +163,12 @@
               <ul class="list">
                 <li>Cambio de pasta térmica y limpieza profunda</li>
                 <li>Ampliación de RAM y cambio a disco SSD</li>
-                <li>Reparación y cambio de pantallas de notebook</li>
-                <li>Reemplazo de teclados, bisagras y cargadores</li>
                 <li>Reparación de fuentes y placas madre</li>
+                <li>Cambio de coolers y ventiladores</li>
+                <li>Mantenimiento preventivo periódico</li>
                 <li>Armado de PC a medida por presupuesto</li>
               </ul>
-              <a class="btn btn--whatsapp btn--block" data-wa data-wa-text="Hola Dario! Necesito un servicio de HARDWARE (pasta térmica, RAM, SSD, pantalla...). ¿Me asesorás?" href="https://wa.me/5492235738816" target="_blank" rel="noopener">Consultar por hardware</a>
+              <a class="btn btn--neon btn--block" href="#contacto">Consultar por hardware</a>
             </div>
           </article>
 
@@ -190,31 +186,10 @@
                 <li>Formateo e instalación de Windows / Linux</li>
                 <li>Instalación de drivers y actualizaciones</li>
                 <li>Optimización de arranque y rendimiento</li>
-                <li>Recuperación de datos y backups automáticos</li>
                 <li>Office, programas de diseño y utilidades</li>
+                <li>Configuración de impresoras y periféricos</li>
               </ul>
-              <a class="btn btn--whatsapp btn--block" data-wa data-wa-text="Hola Dario! Mi equipo tiene un problema de SOFTWARE (virus, lento, formateo). ¿Podés ayudarme?" href="https://wa.me/5492235738816" target="_blank" rel="noopener">Consultar por software</a>
-            </div>
-          </article>
-
-          <!-- REDES -->
-          <article class="card reveal" id="redes">
-            <div class="card__media">
-              <img src="img/redes.jpg" alt="Instalación y configuración de redes wifi y cableado" loading="lazy" />
-              <span class="card__tag">03 / Redes</span>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Redes</h3>
-              <p class="card__text">Cobertura estable en cada rincón, cableado prolijo y seguridad para tu hogar o tu negocio.</p>
-              <ul class="list">
-                <li>Instalación de redes Wi-Fi y cableado UTP</li>
-                <li>Configuración de routers, módems y repetidores</li>
-                <li>Optimización de señal y cambio de canales</li>
-                <li>Redes para oficinas, locales y estudios</li>
-                <li>Impresoras y discos en red compartidos</li>
-                <li>Acceso remoto seguro y cámaras IP</li>
-              </ul>
-              <a class="btn btn--whatsapp btn--block" data-wa data-wa-text="Hola Dario! Necesito asesoramiento en REDES (wifi, cableado, router). ¿Coordinamos?" href="https://wa.me/5492235738816" target="_blank" rel="noopener">Consultar por redes</a>
+              <a class="btn btn--neon btn--block" href="#contacto">Consultar por software</a>
             </div>
           </article>
 
@@ -226,7 +201,7 @@
     <section class="section section--tight" id="proceso">
       <div class="container">
         <header class="section__head section__head--center reveal">
-          <p class="eyebrow">Cómo trabajo</p>
+          <p class="eyebrow">Cómo trabajamos</p>
           <h2 class="section__title">Un proceso claro, <span class="txt-neon">sin sorpresas</span></h2>
         </header>
 
@@ -234,70 +209,82 @@
           <li class="step reveal">
             <span class="step__num">01</span>
             <h3>Diagnóstico</h3>
-            <p>Reviso el equipo, mido temperaturas y detecto la falla real. Sin costo si aprobás la reparación.</p>
+            <p>Revisamos el equipo, medimos temperaturas y detectamos la falla real.</p>
           </li>
           <li class="step reveal">
             <span class="step__num">02</span>
             <h3>Presupuesto</h3>
-            <p>Te explico en palabras simples qué tiene y cuánto sale, con opciones y prioridades.</p>
+            <p>Te explicamos en palabras simples qué tiene y cuánto sale, con opciones y prioridades.</p>
           </li>
           <li class="step reveal">
             <span class="step__num">03</span>
             <h3>Reparación</h3>
-            <p>Manos a la obra con repuestos de calidad. Te mantengo al tanto por WhatsApp en cada paso.</p>
+            <p>Manos a la obra con repuestos de calidad. Te mantenemos al tanto en cada paso.</p>
           </li>
           <li class="step reveal">
             <span class="step__num">04</span>
             <h3>Entrega y garantía</h3>
-            <p>Probamos juntos el equipo, te dejo recomendaciones de cuidado y garantía escrita.</p>
+            <p>Probamos juntos el equipo, te dejamos recomendaciones de cuidado y garantía escrita.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ================= SOBRE MÍ (con Parallax) ================= -->
-    <section class="section about section--parallax" id="sobre-mi">
+    <!-- ================= NOSOTROS (con Parallax) ================= -->
+    <section class="section about section--parallax" id="nosotros">
       <!-- Fondo Parallax: se mueve más lento que el scroll -->
       <div class="parallax__layer" data-parallax="0.18" style="background-image: url('img/parallax-sobre-mi.jpg');" aria-hidden="true"></div>
       <div class="parallax__scrim" aria-hidden="true"></div>
 
       <div class="container about__grid">
         <div class="about__media reveal">
-          <img src="img/dario.jpg" alt="Dario Barbas, técnico en reparación de PC" loading="lazy" />
+          <!-- Video del logo en lugar de la foto.
+               autoplay + loop + muted + playsinline: arranca solo, sin audio
+               y en bucle mientras el usuario recorre la página. -->
+          <video class="about__video"
+                 poster="img/logo-dario.png"
+                 width="1080" height="1920"
+                 autoplay
+                 loop
+                 muted
+                 playsinline
+                 preload="auto"
+                 aria-label="Logo animado de Start Pc">
+            <source src="img/logo-dario-video.mp4" type="video/mp4" />
+            <source src="img/logo-dario.webm" type="video/webm" />
+            Tu navegador no soporta video HTML5.
+          </video>
           <div class="about__frame" aria-hidden="true"></div>
           <div class="about__chip">
-            <span class="pulse"></span> Disponible para nuevos trabajos
+            <span class="pulse"></span> Disponibles para nuevos trabajos
           </div>
         </div>
 
         <div class="about__content">
-          <p class="eyebrow reveal">Sobre mí</p>
-          <h2 class="section__title reveal">Hola, soy <span class="txt-neon">Dario Barbas</span></h2>
+          <p class="eyebrow reveal">Nosotros</p>
+          <h2 class="section__title reveal">Somos <span class="txt-neon">equipo técnico</span></h2>
 
           <p class="reveal">
-            Soy técnico en reparación y mantenimiento de computadoras, con <strong>más de 8 años en el rubro</strong>.
-            Empecé desarmando mi propia PC —y rompiendo alguna que otra cosa— hasta que entendí que este oficio se
-            trata de dos cosas: <strong>criterio técnico</strong> y <strong>honestidad</strong> con quien te confía su equipo.
+            En <strong>Start Pc</strong> somos equipo técnico de reparación y mantenimiento de computadoras, con
+            personal de <strong>más de 8 años en el rubro</strong>. Empezamos desarmando nuestras propias PC —y
+            rompiendo alguna que otra cosa— hasta que entendimos que este oficio se trata de dos cosas:
+            <strong>criterio técnico</strong> y <strong>honestidad</strong> con quien nos confía su equipo.
           </p>
           <p class="reveal">
-            Hoy trabajo con hogares, estudiantes, profesionales y pequeños comercios de Mar del Plata. Reparo PC de
-            escritorio y notebooks, hago mantenimiento preventivo, recupero datos que parecían perdidos y dejo tu red
-            funcionando como corresponde. Cada equipo pasa por un <strong>diagnóstico profesional</strong> antes de tocar
-            nada, y la atención es siempre <strong>personalizada y directa conmigo</strong>. Si algo no tiene arreglo o no
-            vale la pena, te lo digo de frente: <span class="txt-lime">prefiero un cliente que confíe antes que una venta más</span>.
+            Hoy en día trabajamos con hogares, estudiantes, profesionales y pequeños comercios de Mar del Plata.
+            Reparamos PC de escritorio y de torre, hacemos mantenimiento preventivo y dejamos cada equipo listo para
+            trabajar. Cada computadora pasa por un <strong>diagnóstico profesional</strong> antes de tocar nada, y la
+            atención es siempre <strong>personalizada y directa con nuestro equipo</strong>. Si algo no tiene arreglo o no
+            vale la pena, te lo decimos de frente: <span class="txt-neon-soft">preferimos un cliente que confíe antes que
+            una venta más</span>.
           </p>
 
           <ul class="about__values">
             <li class="reveal"><strong>8+ años de trayectoria</strong> — miles de equipos reparados en el taller</li>
-            <li class="reveal"><strong>Diagnóstico profesional</strong> — te explico el problema sin tecnicismos</li>
-            <li class="reveal"><strong>Atención personalizada</strong> — hablás conmigo, no con un call center</li>
+            <li class="reveal"><strong>Diagnóstico profesional</strong> — te explicamos el problema sin tecnicismos</li>
+            <li class="reveal"><strong>Atención personalizada</strong> — hablás con nuestro equipo, no con un call center</li>
             <li class="reveal"><strong>Garantía real</strong> — 6 meses en repuestos y mano de obra</li>
           </ul>
-
-          <div class="about__actions reveal">
-            <a class="btn btn--whatsapp" data-wa data-wa-text="Hola Dario! Vi tu página y quiero hacerte una consulta." href="https://wa.me/5492235738816" target="_blank" rel="noopener">Hablar con Dario</a>
-            <a class="btn btn--ghost" href="#contacto">Ver contacto</a>
-          </div>
         </div>
       </div>
     </section>
@@ -312,7 +299,7 @@
         <header class="section__head section__head--center reveal">
           <p class="eyebrow">Preguntas frecuentes</p>
           <h2 class="section__title">Dudas <span class="txt-neon">habituales</span></h2>
-          <p class="section__lead">Si tu pregunta no está acá, escribime por WhatsApp y te respondo en minutos.</p>
+          <p class="section__lead">Si tu pregunta no está en la lista, escribinos por email y te respondemos a la brevedad.</p>
         </header>
 
         <div class="faq" id="faqList">
@@ -324,7 +311,7 @@
               </button>
             </h3>
             <div class="faq__a">
-              <p>La mayoría de los trabajos de software y mantenimiento se entregan en 24 a 48 horas. Las reparaciones de hardware dependen del repuesto: si es un componente que tengo en stock, suele quedar listo el mismo día o al siguiente.</p>
+              <p>La mayoría de los trabajos de software y mantenimiento se entregan en 24 a 48 horas. Las reparaciones de hardware dependen del repuesto: si es un componente que tenemos en stock, suele quedar listo el mismo día o al siguiente.</p>
             </div>
           </article>
 
@@ -337,191 +324,75 @@
             </h3>
             <div class="faq__a">
               <p>El presupuesto es <strong>sin cargo</strong> y el diagnóstico también, siempre que aprobés la reparación.
-              Si decidís no reparar, solo abonás el diagnóstico técnico, y te entrego el informe con lo que encontré y
-              las opciones disponibles.</p>
+              Si decidís no reparar, solo abonás el diagnóstico técnico, y te entregamos el informe con lo que encontramos
+              y las opciones disponibles.</p>
             </div>
           </article>
 
           <article class="faq__item reveal">
             <h3>
               <button class="faq__q" type="button" aria-expanded="false">
-                <span>¿Atendés a domicilio o tengo que llevar el equipo?</span>
+                <span>¿Reparan notebooks?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq__a">
-              <p>Las dos opciones. Para redes, instalaciones y problemas de escritorio conviene la visita a domicilio. Para reparaciones de notebook o cambio de componentes, lo ideal es que traigas el equipo al taller. Si te queda complicado trasladarlo, lo coordino yo.</p>
+              <p><strong>No.</strong> Nuestro servicio es <strong>exclusivo para PCs de escritorio y de torre</strong>
+              (equipos armados, de marca y de oficina). No trabajamos con notebooks, netbooks ni tablets, porque el
+              recambio de piezas en esos equipos requiere repuestos y herramientas que no manejamos. Si tu consulta es
+              por una notebook, te lo decimos de entrada para que no pierdas el viaje.</p>
             </div>
           </article>
 
           <article class="faq__item reveal">
             <h3>
               <button class="faq__q" type="button" aria-expanded="false">
-                <span>¿Pierdo mis archivos si formateás?</span>
+                <span>¿Atienden a domicilio o hay que llevar el equipo?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq__a">
-              <p>No. Antes de cualquier formateo hago una copia de seguridad completa de tus documentos, fotos y configuraciones. Incluso en casos de disco dañado intento la recuperación de datos antes de reemplazarlo.</p>
+              <p>Las dos opciones. Para problemas de escritorio o instalaciones en el lugar conviene la visita a
+              domicilio. Para cambio de componentes o reparaciones que necesitan banco de trabajo, lo ideal es que
+              traigas la torre al taller. Si te queda complicado trasladarla, lo coordinamos nosotros.</p>
             </div>
           </article>
 
           <article class="faq__item reveal">
             <h3>
               <button class="faq__q" type="button" aria-expanded="false">
-                <span>¿Qué garantía das?</span>
+                <span>¿Se pierden mis archivos si formatean?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq__a">
-              <p>Seis meses de garantía escrita sobre repuestos instalados y mano de obra. Si el mismo problema vuelve dentro de ese plazo, lo reviso sin costo.</p>
+              <p>No. Antes de cualquier formateo resguardamos tus documentos, fotos y configuraciones en un disco externo,
+              y los restauramos en el equipo cuando el sistema queda instalado y actualizado.</p>
             </div>
           </article>
 
           <article class="faq__item reveal">
             <h3>
               <button class="faq__q" type="button" aria-expanded="false">
-                <span>¿Convivís con la garantía oficial del fabricante?</span>
+                <span>¿Qué garantía dan?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq__a">
-              <p>Sí. Te aviso siempre que un equipo esté en garantía oficial, porque en ese caso conviene tramitarla antes de intervenirlo. Si la garantía ya venció o el fabricante no responde, ahí entro yo.</p>
+              <p>Seis meses de garantía escrita sobre repuestos instalados y mano de obra. Si el mismo problema vuelve
+              dentro de ese plazo, lo revisamos sin costo.</p>
             </div>
           </article>
 
           <article class="faq__item reveal">
             <h3>
               <button class="faq__q" type="button" aria-expanded="false">
-                <span>¿Qué medios de pago aceptás?</span>
+                <span>¿Qué medios de pago aceptan?</span>
                 <span class="faq__icon" aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq__a">
-              <p>Efectivo, transferencia bancaria y Mercado Pago (alias o link de pago). En trabajos grandes se abona
-              un anticipo del 50 % al aprobar el presupuesto y el resto contra entrega del equipo.</p>
-            </div>
-          </article>
-
-          <article class="faq__item reveal">
-            <h3>
-              <button class="faq__q" type="button" aria-expanded="false">
-                <span>¿Trabajás con notebooks de cualquier marca?</span>
-                <span class="faq__icon" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="faq__a">
-              <p>Sí: Lenovo, HP, Dell, Asus, Acer, Samsung, MSI, Apple y equipos armados. Si por el modelo necesito un
-              repuesto específico, te lo aviso antes de comprarlo y te paso el precio exacto.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= RESEÑAS (Google Business Profile) ================= -->
-    <section class="section section--alt" id="resenas">
-      <div class="container">
-        <header class="section__head section__head--center reveal">
-          <p class="eyebrow">Reseñas</p>
-          <h2 class="section__title">Lo que dicen <span class="txt-neon">mis clientes</span></h2>
-          <p class="section__lead">Opiniones reales publicadas en mi perfil de Google Empresas.</p>
-        </header>
-
-        <!-- Tarjeta resumen conectada a Google Business Profile -->
-        <div class="gbusiness reveal">
-          <div class="gbusiness__brand">
-            <span class="gbusiness__logo" aria-hidden="true">
-              <svg viewBox="0 0 48 48">
-                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
-                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-              </svg>
-            </span>
-            <div>
-              <strong>Darius Reparaciones</strong>
-              <span>Reseñas de Google</span>
-            </div>
-          </div>
-
-          <div class="gbusiness__score">
-            <span class="gbusiness__num">4.9</span>
-            <div class="gbusiness__meta">
-              <span class="rating__stars" aria-hidden="true">★★★★★</span>
-              <small>4,9 de 5 · 128 opiniones</small>
-            </div>
-          </div>
-
-          <!-- TODO: cambiar por el enlace real de tu perfil de Google Empresas -->
-          <a class="gbusiness__link" href="https://www.google.com/search?q=Darius+Reparaciones+Mar+del+Plata" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4l-9 9M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
-            Ver en Google
-          </a>
-        </div>
-
-        <div class="reviews">
-          <article class="review reveal">
-            <div class="review__head">
-              <span class="review__avatar" aria-hidden="true">M</span>
-              <div class="review__who">
-                <strong>Mariana L.</strong>
-                <span>Hace 2 semanas</span>
-              </div>
-            </div>
-            <p class="review__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p class="review__text">“Mi notebook se apagaba sola y en dos días la tenía de vuelta, impecable. Me mostró la pasta térmica vieja y me explicó todo. Precio justo y muy prolijo.”</p>
-            <div class="review__foot">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-              Publicado en Google · Mantenimiento de notebook
-            </div>
-          </article>
-
-          <article class="review reveal">
-            <div class="review__head">
-              <span class="review__avatar" aria-hidden="true">G</span>
-              <div class="review__who">
-                <strong>Gonzalo P.</strong>
-                <span>Hace 1 mes</span>
-              </div>
-            </div>
-            <p class="review__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p class="review__text">“Le instaló SSD y más RAM a la PC de mi estudio. Pasó de tardar 5 minutos en abrir AutoCAD a arrancar en segundos. Un genio, cero vueltas.”</p>
-            <div class="review__foot">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-              Publicado en Google · Upgrade SSD + RAM
-            </div>
-          </article>
-
-          <article class="review reveal">
-            <div class="review__head">
-              <span class="review__avatar" aria-hidden="true">S</span>
-              <div class="review__who">
-                <strong>Silvia R.</strong>
-                <span>Hace 1 mes</span>
-              </div>
-            </div>
-            <p class="review__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p class="review__text">“Tenía virus y publicidad por todos lados. Dario limpió todo, recuperó mis archivos y me dejó el equipo seguro. Además me enseñó a no volver a caer.”</p>
-            <div class="review__foot">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-              Publicado en Google · Desinfección de virus
-            </div>
-          </article>
-
-          <article class="review reveal">
-            <div class="review__head">
-              <span class="review__avatar" aria-hidden="true">E</span>
-              <div class="review__who">
-                <strong>Estudio Contable MV</strong>
-                <span>Hace 2 meses</span>
-              </div>
-            </div>
-            <p class="review__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p class="review__text">“Cableó toda la oficina y dejó el wifi funcionando en un local donde antes no llegaba señal ni al fondo. Trabajo limpio, ordenado y en el día.”</p>
-            <div class="review__foot">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-              Publicado en Google · Red y cableado
+              <p>Efectivo, transferencia bancaria y Mercado Pago (alias o link de pago).</p>
             </div>
           </article>
         </div>
@@ -534,20 +405,20 @@
 
         <div class="contact__info">
           <p class="eyebrow reveal">Contacto</p>
-          <h2 class="section__title reveal">Contame qué le pasa <span class="txt-neon">a tu equipo</span></h2>
+          <h2 class="section__title reveal">Contanos qué le pasa <span class="txt-neon">a tu equipo</span></h2>
           <p class="section__lead reveal">
-            Escribime por WhatsApp con el modelo del equipo y qué síntoma tiene. Te respondo con un diagnóstico
+            Escribinos por email con el modelo del equipo y qué síntoma tiene. Te respondemos con un diagnóstico
             orientativo y coordinamos día y horario.
           </p>
 
           <ul class="contact__list">
             <li class="reveal">
               <span class="contact__ico" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.92-1.15-4.75-4.17-4.9-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.72-.33.19 0 .38 0 .55.01.19.01.43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1A17 17 0 0 1 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/></svg>
               </span>
               <div>
-                <strong>WhatsApp</strong>
-                <a data-wa data-wa-text="Hola Dario! Quiero coordinar un servicio técnico." href="https://wa.me/5492235738816" target="_blank" rel="noopener">+54 9 223 573-8816</a>
+                <strong>Teléfono</strong>
+                <a href="tel:+5492235738816">223 573-8816</a>
               </div>
             </li>
             <li class="reveal">
@@ -564,8 +435,9 @@
                 <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
               </span>
               <div>
-                <strong>Zona de cobertura</strong>
-                <span>Mar del Plata y alrededores · Servicio a domicilio y remoto</span>
+                <strong>Taller</strong>
+                <!-- TODO: reemplazar por la dirección real del taller -->
+                <span>Av. Colón 1234, Mar del Plata · con cita previa</span>
               </div>
             </li>
             <li class="reveal">
@@ -573,8 +445,8 @@
                 <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.59 3.7 3.7-1.41 1.42L11 13.41V6h2v6.59Z"/></svg>
               </span>
               <div>
-                <strong>Horarios</strong>
-                <span>Lunes a sábado de 9:00 a 20:00 · Urgencias por WhatsApp</span>
+                <strong>Horarios de atención</strong>
+                <span>Lunes a sábados de 9:00 a 17:00 hs</span>
               </div>
             </li>
           </ul>
@@ -583,7 +455,7 @@
         <div class="contact__form-wrap reveal">
           <form class="form" id="contactForm" novalidate>
             <h3 class="form__title">Pedí tu presupuesto</h3>
-            <p class="form__hint">Completá los datos y el mensaje se abre directo en tu WhatsApp.</p>
+            <p class="form__hint">Completá los datos y se va a abrir tu programa de correo con el mensaje listo para enviar.</p>
 
             <div class="field">
               <label for="nombre">Nombre</label>
@@ -593,7 +465,7 @@
 
             <div class="field">
               <label for="equipo">Equipo</label>
-              <input id="equipo" name="equipo" type="text" placeholder="Ej: Notebook Lenovo IdeaPad 3" required />
+              <input id="equipo" name="equipo" type="text" placeholder="Ej: PC de escritorio con mother Asus" required />
               <small class="error" data-error-for="equipo"></small>
             </div>
 
@@ -603,8 +475,7 @@
                 <option value="">Elegí una opción…</option>
                 <option>Hardware / mantenimiento</option>
                 <option>Software / virus / formateo</option>
-                <option>Redes e instalaciones</option>
-                <option>Recuperación de datos</option>
+                <option>Armado de PC a medida</option>
                 <option>Otro / no estoy seguro</option>
               </select>
               <small class="error" data-error-for="servicio"></small>
@@ -612,75 +483,17 @@
 
             <div class="field">
               <label for="mensaje">¿Qué le pasa al equipo?</label>
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contame el síntoma, desde cuándo pasa y si hizo algún ruido o pantalla azul…" required></textarea>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos el síntoma, desde cuándo pasa y si hizo algún ruido o pantalla azul…" required></textarea>
               <small class="error" data-error-for="mensaje"></small>
             </div>
 
-            <button class="btn btn--whatsapp btn--block btn--lg" type="submit">
-              Enviar por WhatsApp
+            <button class="btn btn--neon btn--block btn--lg" type="submit">
+              Enviar por email
             </button>
-            <p class="form__legal">Al enviar aceptás que te contacte por WhatsApp o email. No comparto tus datos con terceros.</p>
+            <p class="form__legal">Al enviar aceptás que te contactemos por email o teléfono. No compartimos tus datos con terceros.</p>
           </form>
         </div>
 
-      </div>
-
-      <!-- ---------- Ubicación y mapa ---------- -->
-      <div class="container ubicacion">
-        <div class="ubicacion__grid">
-          <div class="ubicacion__info reveal">
-            <h3>Dónde encontrarme</h3>
-            <p>Atiendo en el taller con cita previa y también hago servicio a domicilio en Mar del Plata.</p>
-
-            <ul class="ubicacion__lista">
-              <li>
-                <span class="contact__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-                </span>
-                <div>
-                  <strong>Dirección</strong>
-                  <!-- TODO: reemplazar por tu dirección real -->
-                  <a href="https://maps.google.com/?q=Mar+del+Plata,+Buenos+Aires" target="_blank" rel="noopener">
-                    Av. Colón 1234, Mar del Plata, Buenos Aires
-                  </a>
-                </div>
-              </li>
-              <li>
-                <span class="contact__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1A17 17 0 0 1 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/></svg>
-                </span>
-                <div>
-                  <strong>Teléfono / WhatsApp</strong>
-                  <a data-wa data-wa-text="Hola Dario! Quiero coordinar un servicio técnico." href="https://wa.me/5492235738816" target="_blank" rel="noopener">223 573-8816</a>
-                </div>
-              </li>
-              <li>
-                <span class="contact__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.59 3.7 3.7-1.41 1.42L11 13.41V6h2v6.59Z"/></svg>
-                </span>
-                <div>
-                  <strong>Horarios de atención</strong>
-                  <span>Lunes a viernes 9:00 – 20:00 · Sábados 9:00 – 14:00</span>
-                </div>
-              </li>
-            </ul>
-
-            <a class="btn btn--whatsapp" data-wa data-wa-text="Hola Dario! Quiero pasar por el taller, ¿me confirmás la dirección y el horario?" href="https://wa.me/5492235738816" target="_blank" rel="noopener">
-              Coordinar una visita
-            </a>
-          </div>
-
-          <!-- Mapa de Google: reemplazá la dirección dentro de src= por la tuya -->
-          <div class="mapa reveal">
-            <iframe
-              title="Ubicación del taller de Darius Reparaciones en Mar del Plata"
-              src="https://www.google.com/maps?q=Mar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina&z=13&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen></iframe>
-            <span class="mapa__hint">Mapa: Mar del Plata · reemplazable por tu dirección exacta</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -690,22 +503,21 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a href="#inicio" class="brand">
-          <span class="brand__mark" aria-hidden="true"><span class="brand__mark-fallback">DR</span></span>
-          <span class="brand__text"><strong>DARIUS</strong><small>REPARACIONES</small></span>
+        <a href="#inicio" class="brand" aria-label="Start Pc - Inicio">
+          <img class="brand__logo brand__logo--footer"
+               src="img/logo-dario.png"
+               alt="Start Pc — servicio técnico de PC"
+               width="1600" height="1600" loading="lazy" />
         </a>
-        <p>Servicio técnico informático especializado en hardware, software y redes. PC de escritorio y notebooks, con diagnóstico honesto y garantía escrita en Mar del Plata.</p>
+        <p>Start Pc es un equipo técnico de reparación y mantenimiento de computadoras. Servicio exclusivo para PC de escritorio y de torre, con diagnóstico honesto y garantía escrita en Mar del Plata.</p>
 
         <!-- Redes sociales: reemplazá los enlaces por los de tus perfiles -->
         <div class="socials">
-          <a href="https://www.instagram.com/dariusreparaciones" target="_blank" rel="noopener" data-red="instagram" aria-label="Instagram de Darius Reparaciones">
+          <a href="https://www.instagram.com/dariusreparaciones" target="_blank" rel="noopener" data-red="instagram" aria-label="Instagram de Start Pc">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.23 1 .5 1.4.95.45.44.72.84.95 1.4.17.44.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.23.6-.5 1-.95 1.4-.44.45-.84.72-1.4.95-.44.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.23-1-.5-1.4-.95-.45-.44-.72-.84-.95-1.4-.17-.44-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.23-.6.5-1 .95-1.4.44-.45.84-.72 1.4-.95.44-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.07-1 .04-1.5.2-1.9.35-.4.15-.7.35-1 .65-.3.3-.5.6-.65 1-.15.4-.31.9-.35 1.9C3.3 9.2 3.3 9.6 3.3 12s0 2.8.07 3.9c.04 1 .2 1.5.35 1.9.15.4.35.7.65 1 .3.3.6.5 1 .65.4.15.9.31 1.9.35 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1-.04 1.5-.2 1.9-.35.4-.15.7-.35 1-.65.3-.3.5-.6.65-1 .15-.4.31-.9.35-1.9.07-1.1.07-1.5.07-3.9s0-2.8-.07-3.9c-.04-1-.2-1.5-.35-1.9a2.7 2.7 0 0 0-.65-1 2.7 2.7 0 0 0-1-.65c-.4-.15-.9-.31-1.9-.35C15.6 4 15.2 4 12 4Zm0 3.1a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
           </a>
-          <a href="https://www.facebook.com/dariusreparaciones" target="_blank" rel="noopener" data-red="facebook" aria-label="Facebook de Darius Reparaciones">
+          <a href="https://www.facebook.com/dariusreparaciones" target="_blank" rel="noopener" data-red="facebook" aria-label="Facebook de Start Pc">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.27v7A10 10 0 0 0 22 12Z"/></svg>
-          </a>
-          <a data-wa data-wa-text="Hola Dario! Quiero hacer una consulta." href="https://wa.me/5492235738816" target="_blank" rel="noopener" data-red="whatsapp" aria-label="WhatsApp de Darius Reparaciones">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.92-1.15-4.75-4.17-4.9-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.72-.33.19 0 .38 0 .55.01.19.01.43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
           </a>
         </div>
       </div>
@@ -715,17 +527,15 @@
         <ul>
           <li><a href="#hardware">Reparación de hardware</a></li>
           <li><a href="#software">Software y virus</a></li>
-          <li><a href="#redes">Redes y wifi</a></li>
-          <li><a href="#proceso">Cómo trabajo</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
         </ul>
       </nav>
 
       <nav class="footer__col" aria-label="Enlaces del sitio">
         <h4>Sitio</h4>
         <ul>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
-          <li><a href="#resenas">Reseñas</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -733,26 +543,19 @@
       <div class="footer__col">
         <h4>Contacto</h4>
         <ul>
-          <li><a data-wa data-wa-text="Hola Dario! Quiero hacer una consulta." href="https://wa.me/5492235738816" target="_blank" rel="noopener">WhatsApp: +54 9 223 573-8816</a></li>
+          <li><a href="tel:+5492235738816">223 573-8816</a></li>
           <li><a href="mailto:contacto@dariusreparaciones.com">contacto@dariusreparaciones.com</a></li>
           <li><span>Av. Colón 1234, Mar del Plata</span></li>
-          <li><span>Lun a Vie 9–20 hs · Sáb 9–14 hs</span></li>
+          <li><span>Lun a Sáb · 9:00 a 17:00 hs</span></li>
         </ul>
-        <a class="btn btn--whatsapp btn--sm" data-wa data-wa-text="Hola Dario! Quiero hacer una consulta." href="https://wa.me/5492235738816" target="_blank" rel="noopener">Escribime ahora</a>
       </div>
     </div>
 
     <div class="container footer__bottom">
-      <p>© <span id="year">2025</span> Darius Reparaciones · Dario Barbas. Todos los derechos reservados.</p>
+      <p>© <span id="year">2025</span> Start Pc · Equipo técnico. Todos los derechos reservados.</p>
       <p class="footer__made">Sitio desarrollado con foco en velocidad, accesibilidad y diseño cibernético.</p>
     </div>
   </footer>
-
-  <!-- ================= FLOTANTES ================= -->
-  <a class="wa-float" data-wa data-wa-text="Hola Dario! Vengo desde la web y quiero consultar por un servicio técnico." href="https://wa.me/5492235738816" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
-    <span class="wa-float__label">Escribime · 223 573-8816</span>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.45-.72-2.92-1.15-4.75-4.17-4.9-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.72-.33.19 0 .38 0 .55.01.19.01.43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
-  </a>
 
   <button class="to-top" id="toTop" type="button" aria-label="Volver arriba">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M18 15l-6-6-6 6"/></svg>

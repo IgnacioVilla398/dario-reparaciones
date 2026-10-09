@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Diagnóstico de imágenes — Darius Reparaciones</title>
+<title>Diagnóstico de imágenes — Start Pc</title>
 <style>
   body { margin:0; padding:28px; background:#0a0f1d; color:#e8eefc;
          font-family:'Segoe UI',system-ui,sans-serif; }
@@ -48,14 +48,16 @@ Si acá se ven las fotos, entonces los archivos están bien y el problema está 
     ['hero-bg.jpg',  'Fondo del inicio (navbar/hero)'],
     ['hardware.jpg', 'Tarjeta Hardware'],
     ['software.jpg', 'Tarjeta Software'],
-    ['redes.jpg',    'Tarjeta Redes'],
-    ['dario.jpg',    'Sección Sobre mí'],
-    ['parallax-sobre-mi.jpg', 'Fondo Parallax de Sobre mí'],
+    ['logo-dario.png', 'LOGO principal (navbar y footer)'],
+    ['dario.jpg',    'Sección Nosotros (foto del equipo)'],
+    ['parallax-sobre-mi.jpg', 'Fondo Parallax de Nosotros'],
     ['parallax-faq.jpg',      'Fondo Parallax de Preguntas frecuentes'],
-    ['logo.png',     'Logo del navbar'],
     ['favicon.png',  'Icono de la pestaña'],
     ['og-image.jpg', 'Imagen al compartir el link'],
   ];
+
+  // Ya no se usan en la web
+  const SIN_USO = ['logo.png', 'redes.jpg'];
 
   const ORIGINALES = [
     'christin-hume-Hcfwew744z4-unsplash.jpg',
@@ -121,6 +123,12 @@ Si acá se ven las fotos, entonces los archivos están bien y el problema está 
 
   USADAS.forEach(([f, n]) => tarjeta(document.getElementById('usadas'), f, n));
   ORIGINALES.forEach((f) => tarjeta(document.getElementById('originales'), f, ''));
+
+  // Estas quedaron sin uso: solo se informa, no cuentan para el resultado
+  const totalAntes = total;
+  total = 0;
+  SIN_USO.forEach((f) => tarjeta(document.getElementById('originales'), f, 'ya no se usa en la web'));
+  total = totalAntes;
 </script>
 </body>
 </html>

@@ -1,15 +1,17 @@
 ========================================================================
- DARIUS REPARACIONES — Landing page
- Reparación de PC y notebooks · Mar del Plata
+ START PC — Landing page
+ Equipo técnico de reparación y mantenimiento de PC de escritorio
+ Mar del Plata
 ========================================================================
 
 ARCHIVOS
   index.html                  Página completa (todas las secciones)
   css/styles.css              Estilos (CSS puro, sin frameworks ni build)
   js/main.js                  JavaScript nativo (menú, parallax, FAQ, formulario)
-  img/                        Todas las imágenes de la web
+  img/                        Todas las imágenes y el video de la web
   ver-fotos.html              Autochequeo: muestra las imágenes y si cargan
-  img/LEEME-imagenes.txt      Qué imagen va en cada lugar y medidas sugeridas
+  img/LEEME-imagenes.txt      Qué archivo va en cada lugar y medidas
+  _generar_logo.py            Genera un logo de ejemplo (opcional)
   _usar_mis_fotos.py          Recorta y comprime fotos para la web (opcional)
   _generar_placeholders.py    Regenera las imágenes de ejemplo (opcional)
 
@@ -19,91 +21,168 @@ CÓMO VER LA PÁGINA
   cualquier hosting (Netlify, Vercel, Hostinger, cPanel, GitHub Pages).
 
 ------------------------------------------------------------------------
- 1) TUS DATOS — lo que tenés que revisar antes de publicar
+ 1) EL LOGO Y EL VIDEO DEL LOGO
 ------------------------------------------------------------------------
-  a) WHATSAPP: ya está puesto tu número real, 223 573-8816.
-     Está centralizado en js/main.js, bloque CONFIG:
+  a) LOGO PRINCIPAL: el sitio usa img/logo-dario.png y se muestra en el
+     navbar (50 px) junto al nombre "START PC / SERVICIO TÉCNICO", y en el
+     footer (58 px). En celular baja a 40 px.
 
-         const CONFIG = { whatsapp: '5492235738816', ... };
+     DOS COSAS A CORREGIR EN ESE ARCHIVO:
+       1. El archivo se llama .png pero su contenido es JPEG (1600x1600).
+          Los navegadores lo muestran igual, pero conviene convertirlo a PNG
+          (o renombrarlo a .jpg) para que el tipo de archivo coincida.
+       2. Pesa 310 KB y se muestra a 50 px: con 200x200 px alcanza y sobra.
+          Quedaría en unos 20 KB.
+     Se puede hacer automáticamente conservando tu original: avisá y se
+     genera una versión optimizada.
 
-     Ese único valor actualiza TODOS los botones de WhatsApp del sitio.
-     Si algún día cambiás de número, editás solo esa línea.
+     El logo viejo (img/logo.png) ya no se usa: podés borrarlo.
 
-  b) DIRECCIÓN DEL TALLER (inventada, hay que cambiarla):
-     Buscá en index.html el comentario <!-- TODO: reemplazar por tu
-     dirección real --> y cambiá las 2 apariciones de
-     "Av. Colón 1234, Mar del Plata":
-        - el texto de la sección Ubicación
-        - el texto del footer
+  b) VIDEO EN LA SECCIÓN "NOSOTROS": el video OCUPA EL LUGAR DE LA FOTO.
 
-  c) MAPA DE GOOGLE: en la sección Ubicación hay un <iframe>. Reemplazá la
-     dirección dentro de src= por la tuya. Lo más fácil:
-       1. Abrí Google Maps y buscá tu dirección.
-       2. Compartir -> Insertar un mapa -> Copiar HTML.
-       3. Pegá tu <iframe> en reemplazo del que está.
+     Antes había una foto (img/dario.jpg) en la columna izquierda de la
+     sección Nosotros. Esa foto se quitó y en su lugar va el video:
 
-  d) REDES SOCIALES: en el footer, cambiá los enlaces de Instagram y
-     Facebook por los de tus perfiles reales.
+         img/logo-dario-video.mp4   <- tu video (1080x1920 vertical)
 
-  e) LOGO: img/logo.png y img/favicon.png son provisorios (las siglas DR).
-     Reemplazalos por tu logo. Mismo nombre, mismo tamaño.
+     Ficha técnica del archivo que dejaste:
+         Contenedor  MP4 (mp42)
+         Video       H.264 (avc1)  -> compatible con todos los navegadores
+         Audio       AAC (no se usa: va en mute)
+         Duración    4,46 segundos
+         Tamaño      2,67 MB
+         faststart   sí (arranca a reproducir sin descargar todo)
+         Verificado  carga, mide 400x711 px y reproduce en bucle
 
-  f) RESEÑAS DE GOOGLE: las 4 opiniones son de ejemplo. Reemplazá los
-     textos, los nombres y el enlace "Ver en Google" por el de tu perfil
-     de Google Empresas. También ajustá "4,9 de 5 · 128 opiniones".
+     COMPORTAMIENTO:
+       - Atributos autoplay, loop, muted y playsinline en el HTML.
+       - Se reproduce solo al entrar en pantalla y se PAUSA al salir, para
+         no gastar batería mientras el usuario no lo está mirando.
+       - Se reanuda al volver a la sección (bucle continuo al navegar).
+       - Se pausa si la pestaña queda en segundo plano.
+       - Queda como imagen fija (el poster, que es el logo) si el visitante
+         tiene activado "reducir movimiento" en su sistema.
 
-  g) EMAIL: contacto@dariusreparaciones.com es provisorio.
+     TAMAÑO EN PANTALLA: como el video es vertical (9:16), ocupa el ancho
+     completo de su columna y la altura sale sola:
+         400 x 711 px en escritorio  ·  420 x 747 px en celular
+     La regla está en css/styles.css (.about__video). Lleva
+     height: auto además del aspect-ratio: sin eso, el atributo
+     height="1920" del HTML se impone como altura fija y deforma la caja.
+
+     RECOMENDACIONES PARA ALIGERARLO (opcional):
+       - 1080x1920 es casi 3 veces más grande de lo que se muestra:
+         reexportalo a 540x960 y baja a unos 400-600 KB.
+       - Quitá la pista de audio, que no se escucha porque va en mute.
+       - Con eso la página carga bastante más rápido.
+
+     Si un día lo reemplazás, mantené el nombre img/logo-dario-video.mp4 (o
+     usá .webm, que también está contemplado en el HTML).
 
 ------------------------------------------------------------------------
- 2) LAS IMÁGENES DEL SITIO
+ 2) DATOS DE CONTACTO — lo que tenés que revisar antes de publicar
 ------------------------------------------------------------------------
-      img/hero-bg.jpg            fondo del inicio       (1920x1080)
-      img/hardware.jpg           tarjeta Hardware       (1000x700)
-      img/software.jpg           tarjeta Software       (1000x700)
-      img/redes.jpg              tarjeta Redes          (1000x700)
-      img/dario.jpg              foto de Dario          (900x1125)  PLACEHOLDER
-      img/parallax-sobre-mi.jpg  fondo Parallax Sobre mí (1920x1080)
+  a) EMAIL: sigue figurando contacto@dariusreparaciones.com, de la marca
+     anterior. Cambialo por tu casilla real en 3 lugares:
+        - js/main.js, bloque CONFIG (a dónde llega el formulario)
+        - index.html, sección Contacto
+        - index.html, footer
+     Si querés que el formulario envíe solo, sin abrir el correo del
+     visitante, se puede conectar a Formspree o Netlify Forms.
+
+  b) REDES SOCIALES: los enlaces del footer todavía apuntan a
+     instagram.com/dariusreparaciones y facebook.com/dariusreparaciones.
+     Reemplazalos por tus perfiles reales.
+
+  c) TELÉFONO: figura como enlace de llamada (tel:+5492235738816) en la
+     sección Contacto y en el footer.
+
+  d) DIRECCIÓN DEL TALLER (inventada, hay que cambiarla):
+     "Av. Colón 1234, Mar del Plata" aparece 2 veces. Buscá el comentario
+     <!-- TODO: reemplazar por la dirección real del taller -->.
+
+  e) HORARIOS: está puesto "Lunes a sábados de 9:00 a 17:00 hs".
+
+  f) FAVICON: img/favicon.png sigue siendo provisorio (las siglas SP).
+
+------------------------------------------------------------------------
+ 3) LA IDENTIDAD DEL SITIO
+------------------------------------------------------------------------
+  El sitio se llama START PC y habla como EQUIPO TÉCNICO, en plural:
+
+    "En Start Pc somos equipo técnico de reparación y mantenimiento de
+     computadoras, con personal de más de 8 años en el rubro."
+
+  No queda ninguna mención personal (Dario Barbas) ni textos en primera
+  persona singular.
+
+  IMPORTANTE — SERVICIO EXCLUSIVO PARA PC DE ESCRITORIO:
+  La FAQ aclara que NO se trabaja con notebooks, netbooks ni tablets.
+
+  TAMPOCO HAY WHATSAPP: se quitaron todos los botones, enlaces y el botón
+  flotante. El contacto es por formulario (abre el correo), email y
+  teléfono. Tampoco hay reseñas ni mapa embebido.
+
+------------------------------------------------------------------------
+ 4) LAS IMÁGENES Y EL VIDEO DEL SITIO
+------------------------------------------------------------------------
+      img/hero-bg.jpg            fondo del inicio        (1920x1080)
+      img/hardware.jpg           tarjeta Hardware        (1000x700)
+      img/software.jpg           tarjeta Software        (1000x700)
+      img/logo-dario.png         LOGO (tu archivo)       (1899x828)   1,5 MB
+      img/logo-dario-video.mp4   VIDEO en "Nosotros"     (1080x1920)  2,7 MB
+      img/parallax-sobre-mi.jpg  fondo Parallax Nosotros (1920x1080)
       img/parallax-faq.jpg       fondo Parallax FAQ      (1920x1080)
-      img/logo.png               logo del navbar        (320x320)   PLACEHOLDER
-      img/favicon.png            icono de la pestaña    (128x128)   PLACEHOLDER
-      img/og-image.jpg           al compartir el link   (1200x630)
+      img/favicon.png            icono de la pestaña     (128x128)   PLACEHOLDER
+      img/og-image.jpg           al compartir el link    (1200x630)
 
-  Las 6 primeras ya salen de tus fotos de Unsplash (ver img/CREDITOS-fotos.txt).
-  Falta reemplazar: dario.jpg (tu retrato), logo.png y favicon.png.
+      img/dario.jpg              YA NO SE USA (el video ocupa su lugar)
+      img/logo.png               YA NO SE USA (reemplazado por logo-dario.png)
+      img/redes.jpg              YA NO SE USA (se quitó el servicio de Redes)
 
-  Para cambiar una foto hay dos caminos:
-    a) Pisá el archivo de img/ con tu foto, conservando el mismo nombre.
-    b) Editá el diccionario MAPEO en _usar_mis_fotos.py y reejecutá el
-       script: recorta, aplica el grado de color y comprime solo.
+  PESO DE LA PÁGINA: entre el logo (1,5 MB) y el video (2,7 MB), esos dos
+  archivos suman más de 4 MB. Optimizándolos, la página puede bajar de
+  ~5 MB a ~1 MB, que es lo ideal para que cargue rápido en celulares.
 
-  Las imágenes de parallax van oscurecidas y con un desenfoque leve a
-  propósito: encima va el texto y tiene que leerse perfecto.
+  Los scripts opcionales no pisan archivos existentes:
+    _generar_logo.py         crea un logo provisorio si falta
+    _usar_mis_fotos.py       recorta tus fotos a las medidas exactas
+    _generar_placeholders.py regenera todas las imágenes de ejemplo
 
 ------------------------------------------------------------------------
- 3) SECCIONES INCLUIDAS
+ 5) SECCIONES INCLUIDAS
 ------------------------------------------------------------------------
-  Navbar fijo con menú móvil · Hero con fondo y contadores animados ·
-  Servicios (Hardware / Software / Redes) · Proceso de trabajo ·
-  Sobre mí CON PARALLAX · Preguntas frecuentes CON PARALLAX (acordeón) ·
-  Reseñas conectadas a Google Empresas (4,9 ★ + 4 opiniones) ·
-  Contacto con formulario que abre WhatsApp · Ubicación con mapa de
-  Google · Footer con redes sociales · Botón flotante de WhatsApp que
-  aparece al scrollear · Botón volver arriba.
+  Navbar fijo con logo y menú móvil (Inicio · Hardware · Software ·
+  Nosotros · Preguntas Frecuentes · Contacto) · Hero con destacado
+  "+150 computadoras reparadas" y contadores animados · Servicios
+  (Hardware / Software) · Cómo trabajamos (4 pasos) · Nosotros
+  CON PARALLAX y VIDEO DEL LOGO · Preguntas frecuentes CON PARALLAX
+  (acordeón, 7 preguntas) · Contacto con formulario por email ·
+  Footer con redes sociales · Botón volver arriba.
+
+  PALETA DE COLORES
+  Fondo azul noche (#0a0f1d / #0f172a), azules eléctricos como colores
+  secundarios, y AZUL NEÓN FLUORESCENTE como acento:
+      #00f0ff  acento brillante (hover, glows, resaltados)
+      #00d2ff  acento principal (botones, indicadores, bordes activos)
+      #7ef0ff  texto de acento sobre fondo oscuro
+      #00b4d8  acento profundo
+  Todo está centralizado en :root dentro de css/styles.css.
 
   EL EFECTO PARALLAX
-  Las secciones "Sobre mí" y "Preguntas frecuentes" tienen una capa de
+  Las secciones "Nosotros" y "Preguntas frecuentes" tienen una capa de
   fondo que se mueve más lento que el scroll. Se controla en js/main.js
   (función initParallax) y el atributo data-parallax del HTML:
       data-parallax="0.18"  -> más movimiento
       data-parallax="0.14"  -> más sutil
   Si el JavaScript no está activo, el parallax se hace igual con
-  background-attachment: fixed (CSS puro). Y si el visitante tiene activado
-  "reducir movimiento" en su sistema, el fondo queda quieto.
+  background-attachment: fixed (CSS puro).
 
 ------------------------------------------------------------------------
- 4) SI NO VES LAS IMÁGENES (o la página se ve vacía)
+ 6) SI NO VES LAS IMÁGENES (o la página se ve vacía)
 ------------------------------------------------------------------------
-  a) RECARGÁ SIN CACHÉ: Ctrl + Shift + R (o Ctrl + F5).
+  a) RECARGÁ SIN CACHÉ: Ctrl + Shift + R (o Ctrl + F5). Si el logo
+     anterior quedó en caché, con esto se actualiza.
 
   b) Chequeo rápido: abrí ver-fotos.html (doble clic). Muestra las
      imágenes con un cartel verde "CARGA OK" o rojo "NO CARGA".
@@ -116,21 +195,18 @@ CÓMO VER LA PÁGINA
      de "vista previa" de chats y editores no siempre resuelven las rutas
      relativas img/ y muestran la página sin fotos.
 
-  e) El mapa de Google necesita internet. Si no hay conexión, el resto de
-     la página funciona igual.
-
 ------------------------------------------------------------------------
- 5) DETALLES TÉCNICOS
+ 7) DETALLES TÉCNICOS
 ------------------------------------------------------------------------
   - Sin dependencias ni build: HTML5 + CSS3 puro + JavaScript nativo (ES6).
   - Responsive real: escritorio, tablet y celular.
   - Accesibilidad: navegación por teclado, aria-labels, foco visible,
     enlace "saltar al contenido", contraste cuidado y soporte completo de
-    prefers-reduced-motion (incluido el parallax).
+    prefers-reduced-motion (incluidos el parallax y el video del logo).
   - SEO: title, description, Open Graph, HTML semántico, jerarquía de
     encabezados y textos alternativos en las imágenes.
-  - Rendimiento: imágenes comprimidas (~700 KB en total), carga diferida
-    (loading="lazy") y parallax con throttle de ~50 fps.
+  - Rendimiento: imágenes comprimidas, carga diferida (loading="lazy") y
+    parallax con throttle de ~50 fps.
   - Microinteracciones: glow neón en hover, brillo que sigue al cursor en
     las tarjetas, botones con efecto de barrido, aparición al scrollear.
   - Las tipografías (Orbitron y Rajdhani) se cargan desde Google Fonts;

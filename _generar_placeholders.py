@@ -1,5 +1,5 @@
 """
-Genera imágenes placeholder con la identidad visual de Darius Reparaciones.
+Genera imágenes placeholder con la identidad visual de Start Pc.
 Solo crea el archivo si NO existe: nunca pisa tus fotos reales.
 """
 import os
@@ -11,7 +11,7 @@ os.makedirs(IMG_DIR, exist_ok=True)
 NAVY_TOP = (13, 22, 44)
 NAVY_BOT = (7, 12, 24)
 CYAN = (34, 211, 238)
-LIME = (57, 255, 20)
+NEON = (0, 240, 255)
 MUTED = (120, 145, 185)
 
 
@@ -100,7 +100,7 @@ def corner_frame(img, inset=26):
     d = ImageDraw.Draw(img, "RGBA")
     w, h = img.size
     L = min(w, h) // 9
-    col = LIME + (170,)
+    col = NEON + (170,)
     for (x, y, dx, dy) in [
         (inset, inset, 1, 1),
         (w - inset, inset, -1, 1),
@@ -113,14 +113,14 @@ def corner_frame(img, inset=26):
 
 
 SPECS = [
-    ("hero-bg.jpg", (1920, 1080), [("DARIUS REPARACIONES", 108, LIME), ("img/hero-bg.jpg  ·  1920 x 1080", 40, MUTED)]),
+    ("hero-bg.jpg", (1920, 1080), [("START PC", 108, NEON), ("img/hero-bg.jpg  ·  1920 x 1080", 40, MUTED)]),
     ("hardware.jpg", (1000, 700), [("HARDWARE", 96, CYAN), ("img/hardware.jpg  ·  1000 x 700", 34, MUTED)]),
     ("software.jpg", (1000, 700), [("SOFTWARE", 96, CYAN), ("img/software.jpg  ·  1000 x 700", 34, MUTED)]),
     ("redes.jpg", (1000, 700), [("REDES", 96, CYAN), ("img/redes.jpg  ·  1000 x 700", 34, MUTED)]),
-    ("dario.jpg", (900, 1125), [("DARIO BARBAS", 76, LIME), ("img/dario.jpg  ·  900 x 1125", 32, MUTED)]),
-    ("og-image.jpg", (1200, 630), [("DARIUS REPARACIONES", 78, LIME), ("img/og-image.jpg  ·  1200 x 630", 30, MUTED)]),
-    ("logo.png", (320, 320), [("DARIUS", 74, LIME)]),
-    ("favicon.png", (128, 128), [("DR", 60, LIME)]),
+    ("dario.jpg", (900, 1125), [("START PC", 76, NEON), ("img/dario.jpg  ·  900 x 1125", 32, MUTED)]),
+    ("og-image.jpg", (1200, 630), [("START PC", 78, NEON), ("img/og-image.jpg  ·  1200 x 630", 30, MUTED)]),
+    ("logo-dario.png", (320, 320), [("START PC", 62, NEON)]),
+    ("favicon.png", (128, 128), [("SP", 60, NEON)]),
 ]
 
 
@@ -136,9 +136,9 @@ def main():
         img = gradient(size)
         add_grid(img, step=max(40, size[0] // 22))
         img = add_glow(img, (int(size[0] * 0.78), int(size[1] * 0.16)), int(min(size) * 0.55), CYAN, 80)
-        img = add_glow(img, (int(size[0] * 0.14), int(size[1] * 0.88)), int(min(size) * 0.5), LIME, 55)
+        img = add_glow(img, (int(size[0] * 0.14), int(size[1] * 0.88)), int(min(size) * 0.5), NEON, 55)
         img = draw_center_text(img, lines)
-        if name not in ("logo.png", "favicon.png"):
+        if name not in ("logo-dario.png", "favicon.png"):
             img = corner_frame(img)
 
         img.save(path, quality=88, optimize=True)
@@ -150,7 +150,7 @@ def main():
     readme = os.path.join(IMG_DIR, "LEEME-imagenes.txt")
     with open(readme, "w", encoding="utf-8") as f:
         f.write(
-            "IMAGENES QUE USA LA PAGINA — DARIUS REPARACIONES\n"
+            "IMAGENES QUE USA LA PAGINA — START PC\n"
             "================================================\n\n"
             "Reemplaza cada archivo por tu foto real MANTENIENDO EL MISMO NOMBRE.\n"
             "Si el nombre cambia, la imagen no se vera en la web.\n\n"
@@ -159,7 +159,7 @@ def main():
             "  img/software.jpg .. Tarjeta Software (horizontal, ideal 1000x700)\n"
             "  img/redes.jpg ..... Tarjeta Redes (horizontal, ideal 1000x700)\n"
             "  img/dario.jpg ..... Foto de Dario Barbas (vertical, ideal 900x1125)\n"
-            "  img/logo.png ...... Logo del navbar (cuadrado, 320x320, fondo transparente)\n"
+            "  img/logo-dario.png ...... Logo del navbar (tu logo real)\n"
             "  img/favicon.png ... Icono de la pestaña (cuadrado, 128x128)\n"
             "  img/og-image.jpg .. Imagen al compartir el link (1200x630, opcional)\n\n"
             "Consejos:\n"

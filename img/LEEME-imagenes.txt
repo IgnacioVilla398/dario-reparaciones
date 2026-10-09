@@ -1,27 +1,54 @@
-IMÁGENES QUE USA LA PÁGINA — DARIUS REPARACIONES
-================================================
+IMÁGENES Y VIDEO QUE USA LA PÁGINA — START PC
+============================================
 
-Reemplazá cada archivo por tu foto real MANTENIENDO EL MISMO NOMBRE.
-Si el nombre cambia, la imagen no se verá en la web.
+Reemplazá cada archivo por el tuyo MANTENIENDO EL MISMO NOMBRE.
+Si el nombre cambia, no se verá en la web.
 
   img/hero-bg.jpg ............ Fondo del inicio (1920x1080, oscura)
   img/hardware.jpg ........... Tarjeta Hardware (1000x700)
   img/software.jpg ........... Tarjeta Software (1000x700)
-  img/redes.jpg .............. Tarjeta Redes (1000x700)
-  img/dario.jpg .............. Foto de Dario Barbas (900x1125, vertical)  [PLACEHOLDER]
-  img/parallax-sobre-mi.jpg .. Fondo Parallax sección Sobre mí (1920x1080)
+  img/logo-dario.png ......... LOGO principal (cuadrado 1600x1600)  310 KB -> conviene optimizar
+  img/parallax-sobre-mi.jpg .. Fondo Parallax sección Nosotros (1920x1080)
   img/parallax-faq.jpg ....... Fondo Parallax sección FAQ (1920x1080)
-  img/logo.png ............... Logo del navbar (320x320)                  [PLACEHOLDER]
-  img/favicon.png ............ Icono de la pestaña (128x128)              [PLACEHOLDER]
+  img/favicon.png ............ Icono de la pestaña (128x128)          [PLACEHOLDER]
   img/og-image.jpg ........... Imagen al compartir el link (1200x630)
 
-PENDIENTES DE REEMPLAZAR
-  dario.jpg, logo.png y favicon.png son provisorios. El resto ya está
-  hecho con fotos de Unsplash (ver CREDITOS-fotos.txt).
+  img/logo-dario-video.mp4 ... VIDEO en "Nosotros", vertical 1080x1920, 4,5 s
+  img/logo-dario.webm ........ Alternativa al mp4 (opcional)
+
+  img/dario.jpg .............. YA NO SE USA (el video ocupa su lugar)
+  img/logo.png ............... YA NO SE USA (reemplazado por logo-dario.png)
+  img/redes.jpg .............. YA NO SE USA (se quitó el servicio de Redes)
+
+VIDEO EN LA SECCIÓN "NOSOTROS"
+  El video OCUPA EL LUGAR DE LA FOTO, dentro del bloque .about__media.
+  Archivo: img/logo-dario-video.mp4 (1080x1920 vertical, 4,5 s, 2,7 MB,
+  H.264 + AAC). Atributos: autoplay, loop, muted y playsinline.
+
+  Se reproduce solo al entrar en pantalla y se pausa al salir de ella
+  (initLogoVideo en js/main.js). Con "reducir movimiento" activado queda
+  como imagen fija (el poster, que es el logo).
+
+  Como es VERTICAL (9:16), ocupa el ancho de su columna y la altura sale
+  sola: 400x711 px en escritorio y 420x747 px en celular.
+
+  Se puede aligerar bastante reexportándolo a 600x1067 y sin pista de audio
+  (no se escucha porque va en mute): de 2,7 MB bajaría a ~400-600 KB.
+
+PENDIENTES
+  favicon.png es provisorio (las siglas SP).
+
+  logo-dario.png: el archivo se llama .png pero su contenido es JPEG
+  (1600x1600) y pesa 310 KB para mostrarse a 50 px. Conviene convertirlo a
+  PNG real y reducirlo a ~200x200 (quedaría en ~20 KB).
+
+  dario.jpg ya no se usa: el video ocupa su lugar en la sección Nosotros.
+  Podés borrarlo junto con logo.png y redes.jpg.
 
 CÓMO SE GENERARON
-  Los que dicen [PLACEHOLDER] los generó _generar_placeholders.py.
-  Los demás los generó _usar_mis_fotos.py a partir de tus fotos.
+  Los que dicen [PLACEHOLDER] los generan _generar_placeholders.py o
+  _generar_logo.py. Los demás los generó _usar_mis_fotos.py a partir de
+  tus fotos de Unsplash (ver CREDITOS-fotos.txt).
 
 CONSEJOS
   - Comprimí las fotos (TinyPNG / Squoosh) para que la página cargue rápido.
